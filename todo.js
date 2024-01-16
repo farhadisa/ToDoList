@@ -22,7 +22,6 @@ function eventListener() {
 function clearAllTodos(){
     if(confirm("Are you sure you want to delete all todos?"))
     {
-        // todoList.innerHTML = ""; //This is not the quick method.
         while(todoList.firstElementChild != null){
             todoList.removeChild(todoList.firstElementChild);
         }
@@ -54,8 +53,6 @@ function deleteTodo(e){
         showAlert("success", "Todo deleted successfully")
     }
 
-
-   // console.log(e.target)
 }
 
 function deleteTodoFromStorage(deleteTodo){
@@ -96,9 +93,6 @@ function addTodo(e) {
 }
 
 function showAlert(type, message){
-    // <div class="alert alert-danger" role="alert">
-    // This is a danger alert—check it out!
-    // </div>
     const alert = document.createElement("div");
     alert.className = `alert alert-${type}`;
     alert.innerText = message;
@@ -111,14 +105,6 @@ function showAlert(type, message){
 }
 
 function addTodoToUi(newTodo) {   //String value add to UI as list item
-
-    /*<li class="list-group-item d-flex justify-content-between">
-                        Todo 1
-                        <a href = "#" class ="delete-item">
-                            <i class = "fa fa-remove"></i>
-                        </a>
-
-    </li> */
 
     //list Item    
     const listItem = document.createElement("li");
@@ -160,6 +146,5 @@ function addTodoLocalStorage(newTodo){
  todos.push(newTodo);
 
  localStorage.setItem("todos", JSON.stringify(todos));
-
 
 }
