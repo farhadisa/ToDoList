@@ -26,6 +26,7 @@ function clearAllTodos(){
             todoList.removeChild(todoList.firstElementChild);
         }
         localStorage.removeItem("todos");
+        showAlert("primary", "All todos are deleted successfully")
     }
 }
 
@@ -50,7 +51,7 @@ function deleteTodo(e){
     if(e.target.className === "fa fa-remove"){
         e.target.parentElement.parentElement.remove();
         deleteTodoFromStorage(e.target.parentElement.parentElement.textContent);
-        showAlert("success", "Todo deleted successfully")
+        showAlert("danger", "Todo deleted successfully")
     }
 
 }
